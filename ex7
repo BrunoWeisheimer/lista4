@@ -1,0 +1,11 @@
+# Solicita ao usuário para inserir cinco nomes
+nomes = []
+for i in range(5):
+    nome = input(f"Digite o {i+1}º nome: ")
+    nomes.append(nome)
+
+# Encontra o primeiro nome em ordem alfabética
+primeiro_nome = min(nomes)
+
+# Imprime o primeiro nome em ordem alfabética
+print("O primeiro nome em ordem alfabética é:", primeiro_nome)
