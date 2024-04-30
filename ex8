@@ -1,0 +1,27 @@
+def calcular_fatorial(numero):
+    # Caso base: fatorial de 0 é 1
+    if numero == 0:
+        return 1
+    else:
+        # Caso recursivo: fatorial de n é n * fatorial(n-1)
+        return numero * calcular_fatorial(numero - 1)
+
+def main():
+    while True:
+        try:
+            numero = int(input("Digite um número para calcular o fatorial: "))
+            # Verifica se o número é positivo
+            if numero >= 0:
+                resultado = calcular_fatorial(numero)
+                print(f"O fatorial de {numero} é: {resultado}")
+            else:
+                print("Por favor, digite um número inteiro não negativo.")
+        except ValueError:
+            print("Por favor, digite um número inteiro.")
+
+        continuar = input("Deseja calcular o fatorial de outro número? (s/n): ").lower()
+        if continuar != 's':
+            break
+
+if __name__ == "__main__":
+    main()
