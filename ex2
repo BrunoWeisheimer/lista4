@@ -1,0 +1,33 @@
+import random
+
+def jogo_adivinhacao():
+    # Sorteia um número aleatório de 1 a 10
+    numero_secreto = random.randint(1, 10)
+    tentativas = 3
+
+    print("Bem-vindo ao jogo de adivinhação!")
+    print("Tente adivinhar um número de 1 a 10. Você tem 3 tentativas.")
+
+    # Loop para as tentativas
+    while tentativas > 0:
+        try:
+            # Solicita ao usuário para adivinhar
+            guess = int(input("Tentativa {}: Digite seu palpite: ".format(4 - tentativas)))
+            
+            # Verifica se o palpite é igual ao número secreto
+            if guess == numero_secreto:
+                print("Parabéns! Você acertou o número secreto:", numero_secreto)
+                return  # Sai da função, o jogo termina
+            elif guess < numero_secreto:
+                print("O número a adivinhar é maior que", guess)
+            else:
+                print("O número a adivinhar é menor que", guess)
+            
+            tentativas -= 1
+        except ValueError:
+            print("Por favor, digite apenas números inteiros.")
+
+    print("Fim do jogo! O número secreto era:", numero_secreto)
+
+# Chama a função principal para iniciar o jogo
+jogo_adivinhacao()
