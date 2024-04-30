@@ -1,0 +1,18 @@
+def tabuada():
+    while True:
+        try:
+            numero = int(input("Entre com um número de 1 a 9: "))
+            if 1 <= numero <= 9:
+                print("Tabuada de multiplicação do número", numero)
+                for i in range(1, 11):
+                    resultado = numero * i
+                    print(f"{numero} x {i} = {resultado}")
+                resposta = input("Calcular outro número (s/n)? ").lower()
+                if resposta != 's':
+                    break
+            else:
+                print("Por favor, entre com um número válido de 1 a 9.")
+        except ValueError:
+            print("Por favor, entre com um número válido.")
+
+tabuada()
